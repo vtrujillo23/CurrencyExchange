@@ -29,33 +29,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @EnableTransactionManagement
 @ComponentScan({"com.moneyxchange.persistence.dao","com.moneyxchange.persistence.service"})
 public class PeristenceConfiguration {
-	private final String databaseUrl;
-	private final String databaseDriver;
-	private final String databaseUserName;
-    private final String databasePassword;
-    @Autowired
-    public PeristenceConfiguration() {
-    	this.databaseUrl = "jdbc:postgresql://localhost:5433/currency_exchange";
-		this.databaseDriver = "org.postgresql.Driver";
-		this.databaseUserName =  "postgres";
-		this.databasePassword = "postgres";
-    }
-	
-	@Bean
-	public DataSource dataSource() {
-
-		HikariDataSource dataSource = new HikariDataSource();
-		dataSource.setDriverClassName(databaseDriver);
-		dataSource.setJdbcUrl(databaseUrl);
-		dataSource.setUsername(databaseUserName);
-		dataSource.setPassword(databasePassword);
-		dataSource.setIdleTimeout(120000);//Dos minutos
-		dataSource.setMaximumPoolSize(20);
-		dataSource.setMinimumIdle(5);
-		dataSource.setConnectionTimeout(45000);
-		return dataSource;
-	}
-	/**
+		/**
 	 * Creates an entityManagerFactory based on the datasource
 	 *
 	 * @param dataSource the Hikari datasource
