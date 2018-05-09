@@ -5,9 +5,17 @@ import { MoneyExchangeResponse } from '../model/moneyExchangeResponse';
 import { MoneyExchangeReq } from '../model/moneyExchangeReq';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+ const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+  })
+  };
+
 
 @Injectable()
 export class ExchangeService {
+ 
   restUrl='http://localhost:8082/exchange';
   moneyExchangeResponse:MoneyExchangeResponse;
   moneyExchangeReq:MoneyExchangeReq;
@@ -17,6 +25,7 @@ export class ExchangeService {
   }
   
   exhangeCurrency(moneyexchange:Moneyexchange){
+    this.http.post<MoneyExchangeReq>(this.restUrl,new MoneyExchangeReq(),httpOptions);
     moneyexchange.toAmmount='652000';
   }
 }
