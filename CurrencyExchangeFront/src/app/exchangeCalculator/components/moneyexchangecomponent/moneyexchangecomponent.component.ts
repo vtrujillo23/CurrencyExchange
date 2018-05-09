@@ -15,10 +15,11 @@ import {of} from "rxjs/observable/of";
   templateUrl: './moneyexchangecomponent.component.html',
   styleUrls: ['./moneyexchangecomponent.component.css']
 })
+@Injectable()
 export class MoneyexchangecomponentComponent implements OnInit {
   moneyexchange: Moneyexchange;
-  exchangeService:ExchangeService;
   buttonlabel='Calculate';
+  exchangeService:ExchangeService;
   constructor(private http: HttpClient) { 
   }
 
@@ -30,7 +31,7 @@ export class MoneyexchangecomponentComponent implements OnInit {
   }
   
   calculate(){
-   this.exchangeService.exhangeCurrency(this.moneyexchange);
+    this.exchangeService.exhangeCurrency(this.moneyexchange);
   }
 
 }

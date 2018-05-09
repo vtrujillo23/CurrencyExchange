@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 import { catchError, tap } from 'rxjs/operators';
 import {of} from "rxjs/observable/of";
 import { MoneyexchangecomponentComponent } from './exchangeCalculator/components/moneyexchangecomponent/moneyexchangecomponent.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { MoneyexchangecomponentComponent } from './exchangeCalculator/components
   ],
   imports: [
      BrowserModule,
-     FormsModule
+     FormsModule,
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
