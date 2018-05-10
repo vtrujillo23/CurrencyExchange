@@ -67,11 +67,13 @@
 			<groupId>com.moneyxchange.persistence</groupId>
 			<artifactId>CurrencyExchangePersistence</artifactId>
 			<version>1.0</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.moneyxchange.client</groupId>
 			<artifactId>CurrencyRestClients</artifactId>
 			<version>1.0</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
