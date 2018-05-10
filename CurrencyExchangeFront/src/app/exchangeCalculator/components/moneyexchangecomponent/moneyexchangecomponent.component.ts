@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders }from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { catchError, tap } from 'rxjs/operators';
 import {of} from "rxjs/observable/of";
+import { MoneyExchangeResponse } from '../../model/moneyExchangeResponse';
 
 
 @Component({
@@ -18,6 +19,7 @@ import {of} from "rxjs/observable/of";
 @Injectable()
 export class MoneyexchangecomponentComponent implements OnInit {
   moneyexchange: Moneyexchange;
+  moneyExchangeResponse:MoneyExchangeResponse;
   buttonlabel='Calculate';
   exchangeService:ExchangeService;
   constructor(private http: HttpClient) { 

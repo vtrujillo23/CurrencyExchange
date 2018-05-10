@@ -1,14 +1,16 @@
 <table>
 	<tr>
-		<td><input [(ngModel)]="moneyexchange.fromAmmount"
-			[placeholder]="moneyexchange.fromCurrency" [required]="true" /></td>
-		<td></td>
+		<td><input id="fromAmmount" name="fromAmmount" [(ngModel)]="moneyexchange.fromAmmount"
+			[maxlength]="8" [placeholder]="moneyexchange.fromCurrency"
+			[required]="true" #name="ngModel"  class="form-control" [id]="fromAmmount" />
+			<div *ngIf="">    test</div>
+			</td>
 		<td><input [(ngModel)]="moneyexchange.toAmmount"
 			[placeholder]="moneyexchange.toCurrency" [readOnly]="true" /></td>
 	</tr>
 	<tr>
-		<td colSpan="3" align="center" >
-		<button  (click)="calculate()" >{{buttonlabel}}</button>
+		<td colSpan="3" align="center">
+			<button (click)="calculate()">{{buttonlabel}}</button>
 		</td>
 	</tr>
 </table>

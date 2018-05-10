@@ -9,8 +9,10 @@ import { HttpHeaders } from '@angular/common/http';
  const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
+    'Access-Control-Allow-Origin': '*',
   })
   };
+
 
 
 @Injectable()
@@ -18,14 +20,20 @@ export class ExchangeService {
  
   restUrl='http://localhost:8082/exchange';
   moneyExchangeResponse:MoneyExchangeResponse;
-  moneyExchangeReq:MoneyExchangeReq;
   
   constructor(private http: HttpClient){
     
   }
   
   exhangeCurrency(moneyexchange:Moneyexchange){
-    this.http.post<MoneyExchangeReq>(this.restUrl,new MoneyExchangeReq(),httpOptions);
-    moneyexchange.toAmmount='652000';
+    httpOptions.headers.append('Access-Control-Allow-Origin','*');
+    this.http.post<MoneyExchangeResponse>(this.restUrl,{
+    fromAmmount: moneyexchange.fromAmmount,
+    fromCurrency: moneyexchange.fromCurrency,
+    toCurrency: moneyexchange.toCurrency
+   },httpOptions).subscribe((data:MoneyExchangeResponse)=>{          
+                                                          moneyexchange.toAmmount=data.toAmmount;
+                                                          moneyexchange.errors=data.errors;
+                                                          });  
   }
 }
