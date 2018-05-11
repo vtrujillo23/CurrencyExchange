@@ -4,5 +4,5 @@ export class MoneyExchangeResponse {
    fromCurrency:string;
    toCurrency:string;
    toAmmount:string;
-   errors:Error[];
+   errors:string[];
 }

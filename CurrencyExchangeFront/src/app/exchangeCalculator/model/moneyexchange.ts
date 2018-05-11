@@ -3,6 +3,6 @@ export class Moneyexchange {
   fromCurrency: string;
   toCurrency: string;
   toAmmount: string;
-  errors:Error[];
+  errors:string[];
   disabled:boolean;
 }
