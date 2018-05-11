@@ -55,7 +55,7 @@ public class MoneyExchangeService {
 				resultado = exchangeService.findByFromcurrencyAndTocurrencyOrderByDateexchange(fromCurrency,
 						toCurrency);
 				if (resultado.isEmpty()) {
-					moneyExchangeResponseDto.getErrors().add(new ErrorDto("Rate of Change not found"));
+					moneyExchangeResponseDto.getErrors().add("Rate of Change not found");
 					return moneyExchangeResponseDto;
 				}
 			}
@@ -65,7 +65,7 @@ public class MoneyExchangeService {
 			moneyExchangeResponseDto.setToAmmount(formatter.format(result));
 			return moneyExchangeResponseDto;
 		} catch (Exception e) {
-			moneyExchangeResponseDto.getErrors().add(new ErrorDto("Error with application"));
+			moneyExchangeResponseDto.getErrors().add("Error with application");
 			return moneyExchangeResponseDto;
 		}
 	}

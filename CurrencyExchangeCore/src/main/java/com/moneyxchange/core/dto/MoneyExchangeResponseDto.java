@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MoneyExchangeResponseDto extends MoneyExchangeDto{
 	
-	private List<ErrorDto> errors;
+	private List<String> errors;
 	private String toAmmount;
 	
 	
@@ -13,14 +13,14 @@ public class MoneyExchangeResponseDto extends MoneyExchangeDto{
 		this.setFromAmmount(moneyExchangeDto.getFromAmmount());
 		this.setFromCurrency(moneyExchangeDto.getFromCurrency());
 		this.setToCurrency(moneyExchangeDto.getToCurrency());
-		errors=new ArrayList<ErrorDto>();
+		errors=new ArrayList<String>();
 	}
 
-	public List<ErrorDto> getErrors() {
+	public List<String> getErrors() {
 		return errors;
 	}
 
-	public void setErrors(List<ErrorDto> errors) {
+	public void setErrors(List<String> errors) {
 		this.errors = errors;
 	}
 

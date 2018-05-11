@@ -12,10 +12,10 @@ import com.moneyxchange.core.util.RegularExpression;
 @Component
 public class ValidatorComponent {
 	
-	public  List<ErrorDto> validateMoneyExchangeDto(MoneyExchangeDto moneyExchangeDto){
-		List<ErrorDto>  errors=new ArrayList<ErrorDto> ();
+	public  List<String> validateMoneyExchangeDto(MoneyExchangeDto moneyExchangeDto){
+		List<String>  errors=new ArrayList<String> ();
 		if(moneyExchangeDto.getFromAmmount()==null || !moneyExchangeDto.getFromAmmount().matches(RegularExpression.NUMERIC)) {
-			errors.add(new ErrorDto("From Ammount Invalid"));
+			errors.add("From Ammount Invalid");
 		}
 		return errors;
 	}
