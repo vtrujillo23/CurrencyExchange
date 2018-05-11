@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.moneyxchange.client.dto.ResponseObject;
 import com.moneyxchange.client.restclient.ConvertionConsumer;
 import com.moneyxchange.persistence.dto.CurrencyconverurlDto;
 import com.moneyxchange.persistence.dto.ExchangeDto;
