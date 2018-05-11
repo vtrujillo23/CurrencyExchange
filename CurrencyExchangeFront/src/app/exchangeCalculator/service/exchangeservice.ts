@@ -33,7 +33,6 @@ export class ExchangeService {
     toCurrency: moneyexchange.toCurrency
    },httpOptions).subscribe((data:MoneyExchangeResponse)=>{          
                                                           moneyexchange.toAmmount=data.toAmmount;
-                                                          moneyexchange.errors=data.errors;
                                                           });  
   }
 }

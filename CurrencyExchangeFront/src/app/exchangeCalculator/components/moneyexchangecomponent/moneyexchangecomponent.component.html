@@ -1,16 +1,16 @@
-<table>
-	<tr>
-		<td><input id="fromAmmount" name="fromAmmount" [(ngModel)]="moneyexchange.fromAmmount"
+<div class="contentcurr">
+<div>
+<input id="fromAmmount" name="fromAmmount"  [(ngModel)]="moneyexchange.fromAmmount"
 			[maxlength]="8" [placeholder]="moneyexchange.fromCurrency"
-			[required]="true" #name="ngModel"  class="form-control"  />
-			</td>
-		<td><input [(ngModel)]="moneyexchange.toAmmount"
-			[placeholder]="moneyexchange.toCurrency" [readOnly]="true" /></td>
-	</tr>
-	<tr>
-		<td colSpan="3" align="center">
-			<button (click)="calculate()">{{buttonlabel}}</button>
-		</td>
-	</tr>
-</table>
-
+			required #fromAmmount="ngModel"  class="form-control"  class="inputexchange" />
+			&nbsp;
+			&nbsp;
+			<input [(ngModel)]="moneyexchange.toAmmount"
+			[placeholder]="moneyexchange.toCurrency" [readOnly]="true" class="inputexchange" />
+<div align="center" >
+<div *ngIf="fromAmmount.invalid && (fromAmmount.dirty || fromAmmount.touched)" class="errordiv">the from ammount value is required</div>
+</div>
+<div align="center">
+ <button class="buttonexch" (click)="calculate()">{{buttonlabel}}</button>
+</div>
+</div>

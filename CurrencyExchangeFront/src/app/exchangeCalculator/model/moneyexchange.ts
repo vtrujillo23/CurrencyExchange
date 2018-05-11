@@ -4,4 +4,5 @@ export class Moneyexchange {
   toCurrency: string;
   toAmmount: string;
   errors:Error[];
+  disabled:boolean;
 }

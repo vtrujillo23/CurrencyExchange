@@ -30,9 +30,11 @@ export class MoneyexchangecomponentComponent implements OnInit {
     this.exchangeService=new ExchangeService(this.http);
     this.moneyexchange.fromCurrency='USD';
     this.moneyexchange.toCurrency='EUR';
+    this.moneyexchange.disabled=false;
   }
   
   calculate(){
+    this.moneyexchange.disabled=true;
     this.exchangeService.exhangeCurrency(this.moneyexchange);
   }
 

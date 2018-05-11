@@ -12,11 +12,15 @@ import { catchError, tap } from 'rxjs/operators';
 import {of} from "rxjs/observable/of";
 import { MoneyexchangecomponentComponent } from './exchangeCalculator/components/moneyexchangecomponent/moneyexchangecomponent.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoneyexchangecomponentComponent
+    MoneyexchangecomponentComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
      BrowserModule,
