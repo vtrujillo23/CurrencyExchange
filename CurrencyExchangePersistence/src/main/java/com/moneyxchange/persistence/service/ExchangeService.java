@@ -7,6 +7,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.moneyxchange.persistence.dao.ExchangeDao;
@@ -43,7 +45,7 @@ public class ExchangeService extends AbstractService<Exchange,ExchangeDto,Intege
 	}
 	
 	public List<ExchangeDto> findByFromcurrencyAndTocurrencyOrderByDateexchange(CurrencyDto fromCurrency,CurrencyDto toCurrency){
-		List<Exchange> list=exchangeDao.findByFromcurrencyAndTocurrencyOrderByDateexchangeDesc((Currency) ObjectUtil.convertObject(CurrencyDto.class, Currency.class, fromCurrency), (Currency) ObjectUtil.convertObject(CurrencyDto.class, Currency.class, toCurrency));
+		List<Exchange> list=exchangeDao.findByFromcurrencyAndTocurrencyOrderByDateexchangeDesc((Currency) ObjectUtil.convertObject(CurrencyDto.class, Currency.class, fromCurrency), (Currency) ObjectUtil.convertObject(CurrencyDto.class, Currency.class, toCurrency),PageRequest.of(0,1));
 		List<ExchangeDto> result=new ArrayList<ExchangeDto>();
 		list.forEach((exch)->{
 			result.add((ExchangeDto) ObjectUtil.convertObject(Exchange.class, ExchangeDto.class, exch));
