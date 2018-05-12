@@ -9,7 +9,7 @@
 			[placeholder]="moneyexchange.toCurrency" [readOnly]="true" class="inputexchange" />
 <div align="center" >
 <div *ngIf="fromAmmount.invalid && (fromAmmount.dirty || fromAmmount.touched)" class="errordiv">the from ammount value is required</div>
-<div *ngIf="moneyexchange.errors!=null && fromAmmount.touched" class="errordiv">{{moneyexchange.errors[0]}}</div>
+<div *ngIf="(moneyexchange.errors!=null) && fromAmmount.touched" class="errordiv">{{moneyexchange.errors[0]}}</div>
 </div>
 <div align="center">
  <button class="buttonexch" (click)="calculate()">{{buttonlabel}}</button>

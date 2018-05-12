@@ -63,6 +63,7 @@ public class MoneyExchangeService {
 			double result = Double.parseDouble(moneyExchangeDto.getFromAmmount()) * exchangeDto.getRate();
 			NumberFormat formatter = new DecimalFormat("#0.0000");
 			moneyExchangeResponseDto.setToAmmount(formatter.format(result));
+			moneyExchangeResponseDto.setErrors(null);
 			return moneyExchangeResponseDto;
 		} catch (Exception e) {
 			moneyExchangeResponseDto.getErrors().add("Error with application");
